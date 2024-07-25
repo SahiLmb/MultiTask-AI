@@ -1,7 +1,3 @@
-Here's a sample GitHub README for your project:
-
----
-
 # Multitask Pro: Unified AI-Powered Data Retrieval
 
 ## Table of Contents
