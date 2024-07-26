@@ -45,7 +45,7 @@ BOT_LOGO = "./image.png"
 # MODEL_AVATAR_URL = "./hero.png"
 
 ## config gen ai key
-genai.configure(api_key=st.secrets("GOOGLE_API_KEY"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 generation_config = {
     "temperature": 0.7,
     "top_p": 0.95,
