@@ -56,7 +56,7 @@ data_healthcare = [
     (2, 'Priya Singh', 34, 'Female', 'Diabetes', 'Diet and Exercise', 'Dr. Rao', '2023-05-12'),
     (3, 'Ravi Kumar', 28, 'Male', 'Asthma', 'Inhaler', 'Dr. Verma', '2022-11-23'),
     (4, 'Sneha Patel', 52, 'Female', 'Arthritis', 'Physical Therapy', 'Dr. Gupta', '2021-08-19'),
-    (5, 'Manoj Joshi', 63, 'Male', 'Heart Disease', 'Surgery', 'Dr. Sharma', '2020-02-14')
+    (5, 'Manoj Joshi', 63, 'Male', 'Heart Disease', 'Surgery', 'Dr. Verma', '2020-02-14')
 ]
 cursor.executemany("INSERT INTO HealthcareRecords VALUES (?, ?, ?, ?, ?, ?, ?, ?)", data_healthcare)
 
