@@ -156,8 +156,8 @@ def handle_user_input(user_input):
             #     st.markdown("Failed to generate a valid SQL query.")
                 st.session_state["messages"].append({"role": "assistant", "content": "Failed to generate a valid SQL query."})
 
-# Forcing a rerun to display the new message immediately
-    st.experimental_rerun()
+# # Forcing a rerun to display the new message immediately
+#     st.experimental_rerun()
 
 main = st.container()
 with main:
