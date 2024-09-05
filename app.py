@@ -148,22 +148,24 @@ def handle_user_input(user_input):
             query_results = execute_sql_query(sql_query)
             formatted_answer = format_response(user_input, query_results)
             
-            with st.chat_message("assistant", avatar=BOT_LOGO):
-                st.markdown(formatted_answer)
-                st.session_state["messages"].append({"role": "assistant", "content": formatted_answer})
+            # with st.chat_message("assistant", avatar=BOT_LOGO):
+            #     st.markdown(formatted_answer)
+            st.session_state["messages"].append({"role": "assistant", "content": formatted_answer})
         else:
-            with st.chat_message("assistant", avatar=BOT_LOGO):
-                st.markdown("Failed to generate a valid SQL query.")
+            # with st.chat_message("assistant", avatar=BOT_LOGO):
+            #     st.markdown("Failed to generate a valid SQL query.")
                 st.session_state["messages"].append({"role": "assistant", "content": "Failed to generate a valid SQL query."})
+
+# Forcing a rerun to display the new message immediately
+    st.experimental_rerun()
 
 main = st.container()
 with main:
     history = st.container(height=400)
     with history:
         for message in st.session_state["messages"]:
-            avatar = None
-            if message["role"] == "assistant":
-                with st.chat_message(message["role"], avatar=avatar):
+            avatar = BOT_LOGO if message["role"] == "assistant" else None
+            with st.chat_message(message["role"], avatar=avatar):
                     st.markdown(message["content"])
 
     if prompt := st.chat_input("Type your question:", max_chars=1000):
