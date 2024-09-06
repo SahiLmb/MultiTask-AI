@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 load_dotenv() ## load all env variables.
 
 import  streamlit as st
-import os 
+import os
 import sqlite3
 
 import google.generativeai as genai
@@ -38,7 +38,7 @@ def upload_and_connect():
         return None
     
 # Connecting to the database(initial/default database)
-db_connection = connect_to_database('multiinfo.db')
+# db_connection = connect_to_database('multiinfo.db')
 
 st.set_page_config(layout="wide")
 BOT_LOGO = "./image.png"
@@ -156,12 +156,12 @@ def handle_user_input(user_input):
             #     st.markdown("Failed to generate a valid SQL query.")
                 st.session_state["messages"].append({"role": "assistant", "content": "Failed to generate a valid SQL query."})
 
-# # Forcing a rerun to display the new message immediately
-#     st.experimental_rerun()
+# Forcing a rerun to display the new message immediately
+        st.rerun()
 
 main = st.container()
 with main:
-    history = st.container(height=400)
+    history = st.container()
     with history:
         for message in st.session_state["messages"]:
             avatar = BOT_LOGO if message["role"] == "assistant" else None
